@@ -1,0 +1,387 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+body{
+    background-color:black;
+    position:relative;
+}
+a{
+    text-decoration: none;
+}
+.video{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100vw;
+    height:100%;
+    border-radius: 15px;
+    position: absolute;
+    top:35%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index: 4;
+    outline: none;
+}
+
+.video video{
+    width:100%;
+    max-width: 500px;
+    border-radius: 15px;
+    border: 1px solid white;
+    box-shadow: 0px 0px 5px white;
+    
+}
+.hide{
+    display:none;
+}
+.overlay{
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.883);
+    z-index: 2;
+    display: none;
+}
+#section-overlay{
+    position:absolute;
+    width: 100%;
+    height: 93vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.513);
+    z-index: 2;
+}
+.featured-movie{
+    width:100%;
+    min-height:93vh;
+    background:url('img/joker-joaquin-phoenix-03-1572458689.jpg') no-repeat center center/cover;
+    position: relative;
+}
+.featured-movie::before{
+    content:'';
+    width: 100%;
+    height: 93vh;
+    position: absolute;
+    z-index: 1;
+    background:rgba(0,0,0,0.3);
+}
+header{
+    position: absolute;
+    padding-top:20px;
+    padding-left: 40px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    top:0;
+}
+header img{
+    width:150px;
+    cursor: pointer;
+}
+header a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+header #films-link{
+    margin:0px 30px;
+    text-align: center;
+}
+.featured-movie-text{
+    position: absolute;
+    bottom: 30%;
+    padding-top:20px;
+    padding-left: 40px;
+    width:100%;
+    /* height: 150px; */
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    color: white;
+    z-index: 2;
+    
+}
+.featured-movie-text h1{
+    font-size: 3.25rem;
+}
+.featured-movie-text p{
+    font-size: 1.35rem;
+    width:50%;
+    letter-spacing:2px;
+    font-weight:lighter;
+    color: rgba(255, 255, 255, 0.931);
+}
+.featured-movie-text button{
+    z-index: 2;
+    width:80px;
+    margin-top:1em;
+    padding: .5em 0;
+    border-radius: 5px;
+    outline: none;
+    background-color: white;
+    border-color: white;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+.genre{
+    width:100%;
+    height:100%;
+}
+.genre h2{
+    color:white;
+    letter-spacing: 2px;
+    margin:20px 0px;
+    padding:0px 15px;
+}
+.cfm{
+    width:100%;
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-right: 20px;
+}
+
+.left-icon{
+    width:3%;
+    height:50px;
+    padding: 10px 0;
+    cursor: pointer;
+    background-color:rgba(128, 128, 128, 0.616);
+    border-radius: 10px;
+    transition: .2s ease-in-out;
+    display: none;
+}
+.genre .left-icon:hover{
+    background-color:grey;
+    box-shadow: 0px 0px 5px white;
+}
+.right-icon{
+    width:3%;
+    height:50px;
+    padding: 10px 0;
+    cursor: pointer;
+    background-color:rgba(128, 128, 128, 0.616);
+    border-radius: 10px;
+    transition: .2s ease-in-out;
+}
+.genre .right-icon:hover{
+    background-color:grey;
+    box-shadow: 0px 0px 5px white;
+}
+.mySlides img,.mySlides2 img{
+    width:25%;
+    border-radius: 5px;
+    border: 1px solid white; 
+    cursor: pointer; 
+}
+.mySlides,.mySlides2{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    padding:0px 15px;
+}
+
+.fade{
+    display: none;
+}
+.invisible{
+    display: none;
+}
+.mySlides img:hover,.mySlides2 img:hover{
+    transform:scale(1.2);
+}
+.despicable{
+    background-color:black;
+    width:100%;
+    height: 550px;
+    margin: 15px 0px;  
+    padding:0px 15px;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
+button{
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.modify{
+    content:'';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    background:rgba(0, 0, 0, 0.609);
+    }
+
+.despicable span{
+    border-radius: 50%;
+    background-color: white;
+    text-align:center;  
+    width:40px;
+    border-radius: 100%;
+    height: 30px;
+    cursor: pointer;
+    z-index: 2;
+    transition:ease-in-out .2s;
+}
+.despicable span:hover{
+    background-color:grey;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+}
+.content h2 {
+    z-index: 2;
+    font-size:3rem;
+    
+}
+.content p{
+    color: white;
+    padding-left:15px;
+    font-size: 1.4rem;
+    z-index: 2;
+}
+.content button{
+    width:70px;
+    z-index: 2;
+    padding:5px 10px;
+    margin-left:15px;
+    border-radius:5px;
+    outline: none;
+    border-color: white;
+    cursor: pointer;
+}
+.footer{
+    background-color: rgba(0,0,0,.75);
+    bottom:0;
+    width: 100%;
+    height: 25%;
+    padding: 4px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    color:#757575;
+    font-size:13px;
+    margin-top: 1.5em;
+}
+.footer .footer-links a{
+    color:#757575;
+}
+.footer-links{
+    display:grid;
+    grid-template-columns:repeat(4,25%);
+    row-gap: 30px;
+    margin-top: 1em;
+}
+@media(max-width:920px){
+    
+    .content h2{
+        font-size: 2rem;
+    }
+    .content p{
+        font-size:1rem;
+    }
+}
+@media(max-width:740px) {
+    .featured-movie-text h1{
+        font-size:2.75rem;
+    }
+    .featured-movie-text p{
+        font-size:1rem;
+        width:100%;
+    }
+    
+}
+@media(max-width:450px){
+    .featured-movie-text h1{
+        font-size:2.5rem;
+    }
+    .featured-movie-text p{
+        font-size:1rem;
+        width:100%;
+    }
+}
+@media(max-width:400px){
+    header{
+        left:20%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content: space-between;
+        height: 120px;
+    }
+    .despicable{
+        width:100%;
+    }
+    .despicable img{
+        width:40%;
+    }
+    .content{
+        margin-left: 1em;
+    }
+    .content h2{
+        font-size:2rem;
+        width: 70%;
+    }
+    .content p{
+        color: white;
+        padding-left:15px;
+        font-size: 1rem;
+    }
+    .footer-links{
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 5px;
+    }
+}
+@media(max-width:300px){
+    header{
+        right:35%;
+    }
+    .featured-movie-text h1{
+        font-size:2rem;
+    }
+    .featured-movie-text p{
+        font-size:0.8rem;
+        width:100%;
+    }
+    .footer-links{
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 5px;
+    }
+}
+@media(max-width:200px){
+    header{
+        right: 35%;
+    }
+    header img{
+        width:90px;
+    }
+    .featured-movie-text h1{
+        font-size:1.5rem;
+    }
+    .featured-movie-text p{
+        font-size:0.5rem;
+        width:100%;
+    }
+    .footer{
+        height:400px;
+    }
+    .footer-links{
+        grid-template-columns: repeat(1,1fr);
+        column-gap: 5px;
+    }
+}

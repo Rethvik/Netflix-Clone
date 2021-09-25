@@ -1,0 +1,198 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.main-container{
+    width: 100%;
+    height: 1000px;    
+    background: url("https://assets.nflxext.com/ffe/siteui/vlv3/5a27cb25-33a9-4bcc-b441-95fefabcbd37/2548691d-4d8c-4d97-b96d-449d3cca5d7e/IN-en-20210823-popsignuptwoweeks-perspective_alpha_website_medium.jpg") no-repeat center center/cover;
+    position: relative;
+}
+.main-container::after{
+    content:'';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background:rgba(0,0,0,0.6);
+}
+header{
+    position: relative;
+    display: flex;
+}
+header img{
+    position:absolute;
+    z-index: 2;
+    left:25px;
+    top:20px;
+    width:167px;
+}
+.browse{
+    position:absolute;
+    z-index: 2;
+    right:2%;
+    top:20px;
+    color: white;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    border:3px solid #e50914;
+    padding: .3em .4em;
+}
+.container{
+    width:450px;
+    min-height: 550px;
+    position:absolute;
+    z-index: 2;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    color:#fff;
+    left:50%;
+    top:35%;
+    transform:translate(-50%,-50%);
+    background-color:rgba(0,0,0,.75);
+    padding: 60px 68px 40px;
+    border-radius: 5px;
+}
+.container h1{
+    margin-bottom: .8em;
+}
+.user-form{
+    text-align: center;
+    display: grid;
+    grid-template-columns:100%;
+    row-gap: 35px;
+}
+.user-form form{
+    display: grid;
+    grid-template-columns:100%;
+    column-gap: 15px;
+    height: 150px;
+}
+.user-form form input{
+    padding:16px 20px;
+    width:314px;
+    height:50px;
+    border-radius: 5px;
+    outline:none;
+    background-color:#333333;
+    border-color:#333333;
+}
+.user-form form input::placeholder{
+    color:#8c8c8c;
+}
+.user-form form input[type="email"]{
+    margin-bottom: .5em;
+}
+button{
+    text-align: center;
+    padding:15px 0;
+    background-color:#e50914;
+    color:white;
+    outline:none;
+    border-color: black;
+    border-radius: 5px;
+    font-size:16px;
+    font-weight:500;
+    cursor:pointer;
+}
+a{
+    text-decoration: none;
+    color:#B3B3B3;
+}
+
+.user-help{
+    font-size:13px;
+    margin-top: 10px;
+    display: flex;
+    justify-content:space-between;
+}
+.user-facebook{
+    text-align: left;
+    margin-top: 30px;
+}
+.facebook{
+    width:17px;
+}
+.signup{
+    margin-top: 10px;
+    color:#B3B3B3;
+}
+.signup a{
+    color:white;
+    font-weight: 500;
+}
+.footer{
+    background-color: rgba(0,0,0,.75);
+    position: absolute;
+    z-index: 2;
+    bottom:0;
+    width: 100%;
+    height: 25%;
+    padding: 4px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    color:#757575;
+    font-size:13px;
+}
+.footer .footer-links a{
+    color:#757575;
+}
+.footer-links{
+    display:grid;
+    grid-template-columns:repeat(4,25%);
+    row-gap: 30px;
+}
+#help:hover{
+    border-bottom: 1px solid #757575;
+}
+.signup a:hover{
+    border-bottom: 1px solid white;
+}
+@media(max-width:740px){
+    .main-container{
+        background-image: none;
+        background-color: black;
+    }
+    header img{
+        width:100px;
+    }
+    .container{
+        width: 100%;
+        padding:15px;
+    }
+    .container form input{
+        width:100%;
+    }
+    .footer{
+        border-top: 5px solid #757575;
+    }
+}
+@media(max-width:400px){
+    .footer-links{
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 5px;
+    }
+}
+@media(max-width:300px){
+    .footer-links{
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 5px;
+    }
+}
+@media(max-width:260px){
+    .browse{
+        font-size: 1rem;
+    }
+}
+@media(max-width:200px){
+
+    .footer{
+        height:400px;
+    }
+    .footer-links{
+        grid-template-columns: repeat(1,1fr);
+        column-gap: 5px;
+    }
+}
